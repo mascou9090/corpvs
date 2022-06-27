@@ -1,32 +1,56 @@
-import React, { useState } from "react";
-import { LoginS, UserS, KeyS } from './styles';
+import { LoginS, UserS, KeyS } from "./styles";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { User } from "../../type/User";
+import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 
-let schema = yup.object().shape({
-  name: yup
-      .string()
-      .required("Nome Obrigatório (a)")
-      .min(4, "Deve ter no mínimo 3 caracteres"),
-  password: yup
-      .string()
-      .required("Senha Obrigatório (a)")
-      .min(6, "Deve ter no mínimo 6 caracteres"),
-});
+const schema = yup.object({
+  email: yup.string().email('Digite um email valido').min(6, 'Esse campo deve ter pelo menos 6 digitos').required("O email é obrigatorio"),
+  password: yup.string().min(6, 'A senha deve ter pelo menos 6 digitos').required("A senha obrigatoria"),
+}).required();
+
 
 export const Login = () => {
-  //const [] = useState<>(null);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<User>({
+    resolver: yupResolver(schema)
+  });
+  const onSubmit: SubmitHandler<User> = (data) => console.log(data);
+
+  const handleRegister = () => {
+
+  }
 
   return (
     <LoginS>
       <form>
-        <UserS size={24} />
-        <label>Email</label>
-        <input type="text" placeholder="Digite seu email" />
-        <KeyS size={24} />
-        <label>Senha</label>
-        <input type="passward" placeholder="Digite sua senha" />
-        <button>Enviar</button>
+        <h2>Login</h2>
+        <div>
+          <UserS size={24} />
+          <input
+            type="text"
+            {...register("email", { required: true, minLength: 2 })}
+            placeholder="Digite seu email"
+          />
+        </div>
+        <span>{errors.email?.message}</span>
+        <div>
+          <KeyS size={24} />
+          <input
+            type="password"
+            {...register("password")}
+            placeholder="Digite sua senha"
+          />
+        </div>
+        <span>{errors.password?.message}</span>
+        <div>
+          <button onClick={handleSubmit(onSubmit)}>Enviar</button>
+          <button onClick={handleRegister}>Registrar</button>
+        </div>
       </form>
-    </ LoginS>
+    </LoginS>
   );
 };
