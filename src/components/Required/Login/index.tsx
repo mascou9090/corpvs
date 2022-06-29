@@ -1,6 +1,6 @@
 import { LoginS, UserS, KeyS } from "./styles";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { User } from "../../type";
+import { User } from "../../../type";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 

@@ -10,10 +10,17 @@ const moveLeft = keyframes`
     opacity: initial;
   }
 `;
-const ShopS = styled.main`
+export const ShopS = styled.main`
   display: flex;
   justify-content:center;
   align-items:center;
   animation: ${moveLeft} 0.3s forwards;
+`;
 
+export const Aside = styled.aside`
+  display:flex;
+`;
+
+export const Main = styled.main`
+  display:flex;
 `;

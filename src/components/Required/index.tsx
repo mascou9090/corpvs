@@ -3,8 +3,8 @@ import {
   useEffect 
 } from 'react';
 import { User } from '../../type';
-import { Login } from '../Login'
-import { Shop } from '../Shop'
+import { Login } from './Login'
+import { Shop } from './Shop'
 
 
 const user:any = localStorage.getItem('dadosString')
