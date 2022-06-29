@@ -1,6 +1,16 @@
-import styled from 'styled-components';
+import styled,{keyframes} from 'styled-components';
 import { User, Key } from "phosphor-react";
 
+const moveLeft = keyframes`
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: initial;
+    opacity: initial;
+  }
+`;
 
 export const LoginS = styled.form`
   display: flex;
@@ -10,6 +20,9 @@ export const LoginS = styled.form`
   width:30rem;
   border-radius: 6px;
   border: solid 1px black;
+  animation: ${moveLeft} 0.3s forwards;
+  box-shadow: 3px 3px 7px black;
+
   span {
     color: red;
     position:absolute;

@@ -1,12 +1,17 @@
 import { LoginS, UserS, KeyS } from "./styles";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { User } from "../../type/User";
+import { User } from "../../type";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 
 const schema = yup.object({
-  email: yup.string().email('Digite um email valido').min(6, 'Esse campo deve ter pelo menos 6 digitos').required("O email é obrigatorio"),
-  password: yup.string().min(6, 'A senha deve ter pelo menos 6 digitos').required("A senha obrigatoria"),
+  email: yup.string()
+  .email('Digite um email valido')
+  .min(6, 'Esse campo deve ter pelo menos 6 digitos')
+  .required("O email é obrigatorio"),
+  password: yup.string()
+  .min(6, 'A senha deve ter pelo menos 6 digitos')
+  .required("A senha obrigatoria"),
 }).required();
 
 
@@ -18,12 +23,14 @@ export const Login = () => {
   } = useForm<User>({
     resolver: yupResolver(schema)
   });
-  const onSubmit: SubmitHandler<User> = (data) => console.log(data);
-
-  const handleRegister = () => {
-
+  const onSubmit: SubmitHandler<User> = (data) => {
+    const dadosString = JSON.stringify(data)
+    localStorage.setItem('dadosString', dadosString)
   }
 
+  const handleRegister = (event: any) => {
+    event.preventDefault()
+  }
   return (
     <LoginS>
       <form>

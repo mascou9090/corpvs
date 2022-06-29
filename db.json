@@ -1,0 +1,52 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "name": "Camisa do Flamengo - Jogo 1 Adidas 2022 ",
+      "description": "O fundo em aros nesta camisa de futebol adidas do Flamengo ganha vida com uma estampa ondulada inspirada no mar de bandeiras que agitam o Estádio do Maracanã. Criada para manter os torcedores confortáveis, possui painéis laterais em mesh e tecido Aeroready antitranspirante. Com o lema 'A maior paixão do mundo', esta camisa presta homenagem à emoção reinante a cada partida disputada em casa.",
+      "price": 299.99,
+      "categoria_id": 1,
+      "foto": "https://flamengo.vteximg.com.br/arquivos/ids/164071-473-473/H18340_1-removebg-preview.png?v=637807439979400000"
+    },
+    {
+      "id": 2,
+      "name": "Camisa do Flamento - Jogo 2 Adidas 2021",
+      "description": "O fundo em aros nesta camisa de futebol adidas do Flamengo ganha vida com uma estampa ondulada inspirada no mar de bandeiras que agitam o Estádio do Maracanã. Criada para manter os torcedores confortáveis, possui painéis laterais em mesh e tecido Aeroready antitranspirante. Com o lema 'A maior paixão do mundo', esta camisa presta homenagem à emoção reinante a cada partida disputada em casa.",
+      "price": 299.99,
+      "categoria_id": 1,
+      "foto": "https://flamengo.vteximg.com.br/arquivos/ids/162543-473-473/cam.masc.jogo2_1.jpg?v=637565301592070000"
+    },
+    {
+      "id": 3,
+      "name": "Camisa Flamento Hovel Extra Braziline",
+      "description": "Camiseta masculina em Dry max, tecido super leve, possui alta capacidade de respiração, absorvendo o suor e garantindo uma pele seca. A peça leva estampa com toque zero, representando nas listras a silhueta da cidade do Rio e CRF em destaque.",
+      "price": 99.99,
+      "categoria_id": 1,
+      "foto": "https://flamengo.vteximg.com.br/arquivos/ids/164595-473-473/Hovel-1.png?v=637883096641400000"
+    },
+    {
+      "id": 4,
+      "name": "Camisa Flamengo Vult Braziline",
+      "description": "Características: Camisa em algodão, Modelagem padrão, Ótimo caimento",
+      "price": 119.99,
+      "categoria_id": 1,
+      "foto": "https://flamengo.vteximg.com.br/arquivos/ids/163687-473-473/VULT-FRENTE_GRAFITE-copia.jpg?v=637750520422300000"
+    },
+    {
+      "id": 5,
+      "name": "Camisa Flamengo Goleiro 1 Adidas 2022",
+      "description": "Comande seu quadrante como o número um do Flamengo. Os goleiros do clube vestem camisas de futebol adidas como esta antes de entrar no gramado do Maracanã. Seu tecido leve tem modelagem que acompanha seus movimentos, com cortes laterais e elasticidade adicional sob os braços. O tecido AEROREADY à prova de suor mantém você confiante quando for chamado para a ação. Este produto é feito com Primegreen, uma série de materiais reciclados de alta performance.",
+      "preco": 299.99,
+      "categoria_id": 2,
+      "foto": "https://flamengo.vteximg.com.br/arquivos/ids/164491-473-473/HA8330_FR_Torso_eCom-0--1-.png?v=637864958915300000"
+    },
+    {
+      "id": 6,
+      "name": "Camisa Flamengo Goleiro 1 Adidas 2021",
+      "description": "Comande seu quadrante como o número um do Flamengo. Os goleiros do clube vestem camisas de futebol adidas como esta antes de entrar no gramado do Maracanã. Seu tecido leve tem modelagem que acompanha seus movimentos, com cortes laterais e elasticidade adicional sob os braços. O tecido AEROREADY à prova de suor mantém você confiante quando for chamado para a ação. Este produto é feito com Primegreen, uma série de materiais reciclados de alta performance.",
+      "price": 279.99,
+      "categoria_id": 2,
+      "foto": "https://flamengo.vteximg.com.br/arquivos/ids/162458-473-473/cam.gol.ama_1.jpg?v=637550681844700000"
+    }
+  ]
+}
