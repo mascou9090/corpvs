@@ -1,10 +1,9 @@
-import { LoginS, UserS, KeyS, Button } from "./styles";
+import { LoginS, UserS, KeyS } from "./styles";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { User } from "../../../type";
+import { User } from "../../type";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const schema = yup.object({
   email: yup.string()
@@ -18,7 +17,7 @@ const schema = yup.object({
 
 
 export const Login = () => {
-  const [load, setLoad] = useState<User | null>(null)
+  const NAVIGATION = useNavigate()
   const {
     register,
     handleSubmit,
@@ -27,17 +26,14 @@ export const Login = () => {
     resolver: yupResolver(schema)
   });
   const onSubmit: SubmitHandler<User> = (data) => {
-    setLoad(data)
     const dadosString = JSON.stringify(data)
     localStorage.setItem('dadosString', dadosString)
+    NAVIGATION("/shop")
   }
-  useEffect(() => {
-    window.onload
-  },[load, localStorage])
-
+  
   return (
     <LoginS>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <h2>Login</h2>
         <div>
           <UserS size={24} />
@@ -57,9 +53,7 @@ export const Login = () => {
           />
         </div>
         <span>{errors.password?.message}</span>
-        <div>
-          <Button to="/shop" onClick={handleSubmit(onSubmit)}>Enviar</Button>
-        </div>
+        <button onClick={handleSubmit(onSubmit)}>Enviar</button>
       </form>
     </LoginS>
   );

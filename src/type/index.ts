@@ -10,3 +10,11 @@ export interface Shirts {
   id: number;
   price: number;
 }
+export interface SettingProps {
+  data: string[];
+}
+
+
+export interface CARD {
+  shirts: Shirts[] | Shirts;
+}

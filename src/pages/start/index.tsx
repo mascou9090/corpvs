@@ -1,11 +1,11 @@
 import { Header } from '../../components/Header'
-import { Required } from '../../components/Required'
+import { Rotas } from '../../Rotas'
 
 export const Starts = () => {
   return (
     <div>
       <Header />
-      <Required />
+      <Rotas />
     </div>
   )
 }

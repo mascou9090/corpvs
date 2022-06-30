@@ -15,6 +15,10 @@ export const ShopS = styled.main`
   justify-content:center;
   align-items:center;
   animation: ${moveLeft} 0.3s forwards;
+  section {
+    height:88rem;
+    width:50vw;
+  }
 `;
 
 export const Aside = styled.aside`
@@ -22,28 +26,33 @@ export const Aside = styled.aside`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width:30vw;
+  width:50vw;
+  height:88rem;
+  flex-wrap: wrap;
+  
   span {
+    margin-left:5.3rem;
     display:block;
     font-size: 2rem;
+    color:#aaf;
   }
   div {
+    width: 20rem;
+    height:25rem;
     margin: 1rem;
-    padding:2rem;
+    padding:1rem;
     border:1px solid black;
     border-radius: 5px;
     transition: ease-in-out .5s;
     &:hover {
-      box-shadow: 1px 1px 5px greenyellow;
+      box-shadow: 2px 2px 5px black;
+      padding:1.1rem;
     }
   }
 `;
 
-export const Main = styled.main`
-  display:flex;
-  width:70vw;
-`;
 export const ImgS = styled.img`
-  width:20rem;
-  margin:0.3rem;
+  padding: 0 auto;
+  width:17rem;
+  margin:0.5rem;
 `;

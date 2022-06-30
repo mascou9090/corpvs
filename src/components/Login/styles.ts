@@ -23,6 +23,17 @@ export const LoginS = styled.form`
   border: solid 1px black;
   animation: ${moveLeft} 0.3s forwards;
   box-shadow: 3px 3px 7px black;
+  button {
+    transition: ease-in-out 0.2s;
+    display: block;
+    justify-content: center;
+    margin: 1.6rem auto;
+    padding: 0.6rem 2rem;
+    border-radius: 6px;
+    &:hover {
+      background-color: #ccc;
+    }
+  }
 
   span {
     color: red;
@@ -61,14 +72,12 @@ export const UserS = styled(User)`
 export const KeyS = styled(Key)`
   margin: 1.6rem 0 0 0.5rem;
 `;
-export const Button = styled(Link)`
+export const button = styled(Link)`
   display: block;
   justify-content: center;
   margin: 1.6rem auto;
   padding: 0.6rem 2rem;
-  border: 1px solid black;
   border-radius: 6px;
-  text-decoration: none;
   &:hover {
     background-color: #ccc;
   }
