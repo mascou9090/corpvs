@@ -1,8 +1,10 @@
-import { LoginS, UserS, KeyS } from "./styles";
+import { LoginS, UserS, KeyS, Button } from "./styles";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { User } from "../../../type";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const schema = yup.object({
   email: yup.string()
@@ -16,6 +18,7 @@ const schema = yup.object({
 
 
 export const Login = () => {
+  const [load, setLoad] = useState<User | null>(null)
   const {
     register,
     handleSubmit,
@@ -24,13 +27,14 @@ export const Login = () => {
     resolver: yupResolver(schema)
   });
   const onSubmit: SubmitHandler<User> = (data) => {
+    setLoad(data)
     const dadosString = JSON.stringify(data)
     localStorage.setItem('dadosString', dadosString)
   }
+  useEffect(() => {
+    window.onload
+  },[load, localStorage])
 
-  const handleRegister = (event: any) => {
-    event.preventDefault()
-  }
   return (
     <LoginS>
       <form>
@@ -54,8 +58,7 @@ export const Login = () => {
         </div>
         <span>{errors.password?.message}</span>
         <div>
-          <button onClick={handleSubmit(onSubmit)}>Enviar</button>
-          <button onClick={handleRegister}>Registrar</button>
+          <Button to="/shop" onClick={handleSubmit(onSubmit)}>Enviar</Button>
         </div>
       </form>
     </LoginS>
