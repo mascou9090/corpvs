@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Loading } from "../../Styles/styles";
 import { Shirts } from "../../type";
-import { SectionS } from "./styles";
+import { Button, SectionS } from "./styles";
 
 export const Shirt = () => {
   const [produto, setProduto] = useState<Shirts | null>(null);
@@ -32,6 +32,7 @@ export const Shirt = () => {
 
   const handleBuy = () => {
     setBag(produto);
+    window.alert('O item foi adicionado ao seu carrinho.')
   };
 
   if (loading)
@@ -51,7 +52,7 @@ export const Shirt = () => {
         <img src={produto.foto} alt={produto.name} />
         <span>{produto.price}</span>
         <div>
-          <button onClick={handleBuy}>COMPRAR</button>
+          <Button onClick={handleBuy}>COMPRAR</Button>
         </div>
         <div>
           <p>{produto.description}</p>

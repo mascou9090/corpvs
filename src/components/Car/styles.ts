@@ -44,10 +44,10 @@ export const Exit = styled.button`
   transition: 0.5s ease-in-out;
   font-weight: 600;
   border-radius: 4px;
-  padding:1px 3px;
+  padding:1px 5px;
   &:hover {
     cursor: pointer;
     background-color:red;
-    border-radius: 10px;
+    border-radius: 7px;
   }
 `;

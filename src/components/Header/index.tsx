@@ -1,6 +1,6 @@
 import { HeaderS } from "./style";
 export const Header = () => {
- 
+
   return (
     <>
       <HeaderS>

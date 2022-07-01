@@ -28,3 +28,17 @@ export const SectionS = styled.section`
     }
   }
 `;
+
+
+export const Button = styled.button`
+  width:20rem;
+  padding:2rem;
+  border-radius: 4px;
+  margin: 0 auto;
+  transition: ease-in-out 0.5s;
+  font-size: 1.5rem;
+  &:hover {
+    cursor: pointer;
+    background-color:red;
+  }
+`;
