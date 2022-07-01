@@ -16,7 +16,7 @@ export const ShopS = styled.main`
   align-items:center;
   animation: ${moveLeft} 0.3s forwards;
   section {
-    height:88rem;
+    height:84rem;
     width:50vw;
   }
 `;
@@ -27,7 +27,7 @@ export const Aside = styled.aside`
   align-items: center;
   flex-direction: column;
   width:50vw;
-  height:88rem;
+  height:85rem;
   flex-wrap: wrap;
   
   span {

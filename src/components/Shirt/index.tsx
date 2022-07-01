@@ -8,13 +8,11 @@ export const Shirt = () => {
   const [produto, setProduto] = useState<Shirts | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState(null);
-  const [bag, setBag] = useState<Shirts | null>(null);
-  
-  localStorage.setItem('bag', JSON.stringify(bag))
+  const [bag, setBag] = useState<Shirts[] | Shirts | null>([]);
+
+  localStorage.setItem("bag", JSON.stringify(bag));
 
   const { id } = useParams();
-
-  console.log(id);
 
   useEffect(() => {
     async function fetchProduto(url: string) {
@@ -33,9 +31,8 @@ export const Shirt = () => {
   }, [id]);
 
   const handleBuy = () => {
-    setBag(produto)
-  }
-
+    setBag(produto);
+  };
 
   if (loading)
     return (
