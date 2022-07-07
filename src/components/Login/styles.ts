@@ -1,6 +1,5 @@
 import styled, { keyframes } from "styled-components";
 import { User, Key } from "phosphor-react";
-import { Link } from "react-router-dom";
 
 const moveLeft = keyframes`
   from {
@@ -18,7 +17,7 @@ export const LoginS = styled.form`
   justify-content: center;
   align-items: center;
   margin: 10rem auto;
-  width: 30rem;
+  max-width: 23rem;
   border-radius: 6px;
   border: solid 1px black;
   animation: ${moveLeft} 0.3s forwards;
@@ -30,7 +29,16 @@ export const LoginS = styled.form`
     margin: 1.6rem auto;
     padding: 0.6rem 2rem;
     border-radius: 6px;
+    :nth-child(2) {
+    background-color: #22a;
+    color: white;
     &:hover {
+      cursor: pointer;
+      background-color: #00f;
+    }
+  }
+    &:hover {
+      cursor: pointer;
       background-color: #ccc;
     }
   }
@@ -71,14 +79,4 @@ export const UserS = styled(User)`
 `;
 export const KeyS = styled(Key)`
   margin: 1.6rem 0 0 0.5rem;
-`;
-export const button = styled(Link)`
-  display: block;
-  justify-content: center;
-  margin: 1.6rem auto;
-  padding: 0.6rem 2rem;
-  border-radius: 6px;
-  &:hover {
-    background-color: #ccc;
-  }
 `;

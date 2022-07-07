@@ -5,11 +5,10 @@ import { Shirts } from "../../type";
 import { Button, SectionS } from "./styles";
 
 export const Shirt = () => {
-  const [produto, setProduto] = useState<Shirts | null>(null);
+  const [produtos, setProdutos] = useState<Shirts | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState(null);
-  const [bag, setBag] = useState<Shirts[] | Shirts | null>([]);
-
+  const [bag, setBag] = useState<Shirts | null>();
   localStorage.setItem("bag", JSON.stringify(bag));
 
   const { id } = useParams();
@@ -20,7 +19,7 @@ export const Shirt = () => {
         setLoading(true);
         const response = await fetch(url);
         const json = await response.json();
-        setProduto(json);
+        setProdutos(json);
       } catch (e: any) {
         setError(e.message);
       } finally {
@@ -31,8 +30,8 @@ export const Shirt = () => {
   }, [id]);
 
   const handleBuy = () => {
-    setBag(produto);
-    window.alert('O item foi adicionado ao seu carrinho.')
+    setBag(produtos);
+    window.alert("O item sera adicionado ao seu carrinho.");
   };
 
   if (loading)
@@ -43,19 +42,19 @@ export const Shirt = () => {
       </>
     );
   if (error) return <p>{error}</p>;
-  if (produto === null) return null;
+  if (produtos === null) return null;
 
   return (
     <SectionS>
       <div>
-        <h2>{produto.name}</h2>
-        <img src={produto.foto} alt={produto.name} />
-        <span>{produto.price}</span>
+        <h2>{produtos.name}</h2>
+        <img src={produtos.foto} alt={produtos.name} />
+        <span>{produtos.price}</span>
         <div>
           <Button onClick={handleBuy}>COMPRAR</Button>
         </div>
         <div>
-          <p>{produto.description}</p>
+          <p>{produtos.description}</p>
         </div>
       </div>
     </SectionS>

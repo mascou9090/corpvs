@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Shirts } from "../../type";
 import { Car } from "../Car";
+import { Header } from "../Header";
 import { Aside, ImgS, ShopS } from "./styles";
 
 export const Shop = () => {
@@ -13,7 +14,9 @@ export const Shop = () => {
   }, []);
   if (shirt === null) return null;
   return (
-    <ShopS>
+    <>
+      <Header />
+      <ShopS>
       <section>
         <Car />
       </section>
@@ -33,5 +36,6 @@ export const Shop = () => {
         ))}
       </Aside>
     </ShopS>
+    </>
   );
 };

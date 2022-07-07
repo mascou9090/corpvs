@@ -75,7 +75,10 @@ export const Login = () => {
           />
         </div>
         <span>{errors.password?.message}</span>
+        <div>
         <button onClick={handleSubmit(onSubmit)}>Enviar</button>
+        <button>Registrar</button>
+        </div>
       </form>
     </LoginS>
   );

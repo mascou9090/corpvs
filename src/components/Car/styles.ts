@@ -11,6 +11,9 @@ export const Card = styled.div`
   border-radius: 6px;
   text-align: center;
   box-shadow: -1px 1px 2px black;
+  @media (max-width) {
+    height:10rem;
+  }
   strong {
     font-size: 1.2rem;
   }
@@ -34,20 +37,5 @@ export const Delete = styled(Backspace)`
     cursor: pointer;
     background-color:red;
     border-radius: 10px;
-  }
-`;
-
-export const Exit = styled.button`
-  border: 2px solid black;
-  color:black;
-  margin-left: 3rem;
-  transition: 0.5s ease-in-out;
-  font-weight: 600;
-  border-radius: 4px;
-  padding:1px 5px;
-  &:hover {
-    cursor: pointer;
-    background-color:red;
-    border-radius: 7px;
   }
 `;
